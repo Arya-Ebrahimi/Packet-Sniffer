@@ -1,8 +1,6 @@
 import socket
 import struct
 
-from matplotlib.pyplot import flag
-
 #unpack frame from link layer
 def frame(data):
     dest_mac, src_mac, proto=struct.unpack('! 6s 6s H', data[:14])
