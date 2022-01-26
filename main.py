@@ -16,7 +16,7 @@ if __name__ == '__main__':
         print('dest mac: {}, src mac: {}, ethertype: {}'.format(
             dest_mac, src_mac, ethertype))
 
-        network layer protocols:
+        # network layer protocols:
         if ethertype == 0x0800:
             # ipv4
             print('\tipv4:')
@@ -36,6 +36,8 @@ if __name__ == '__main__':
                       .format(src_port, dest_port, seq, ack, flags))
                 print('\t\tdata:')
                 print(data)
+                
+                # http and ssh are application layers protocol and can handle them here
 
             elif net_protocol == 1:
                 # icmp

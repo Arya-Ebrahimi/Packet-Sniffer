@@ -57,16 +57,6 @@ def udp(data):
 def arp(data):
     (hardware_type, proto, hardware_size, proto_size,
     opcode, src_mac, src_ip, dest_mac, dest_ip) = struct.unpack('! H H B B H 6s 4s 6s 4s', data[:28])
-    
-    # hardware_type = binascii.hexlify(hardware_type)
-    # proto = binascii.hexlify(proto)
-    # hardware_size = binascii.hexlify(hardware_size)
-    # proto_size = binascii.hexlify(proto_size)
-    # opcode = binascii.hexlify(opcode)
-    # src_mac = binascii.hexlify(src_mac)
-    # src_ip = binascii.hexlify(src_ip)
-    # dest_mac = binascii.hexlify(dest_mac)
-    # dest_ip = binascii.hexlify(dest_ip)
 
     return (hardware_type, proto, hardware_size, proto_size,
     opcode, get_mac(src_mac), ipv4(src_ip), get_mac(dest_mac), ipv4(dest_ip), data[28:])
